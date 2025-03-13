@@ -1,3 +1,12 @@
+/**
+ * In this file, you will write the test cases for the TasksListComponent.
+ * 
+ * The test cases will be the following:
+ * 1. Should create the component.
+ * 2. Should render the task title.
+ * 3. Should render the task description.
+ * 4. Button should be rendered with the text 'Delete'.
+ */
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TasksListComponent } from './tasks-list.component';
