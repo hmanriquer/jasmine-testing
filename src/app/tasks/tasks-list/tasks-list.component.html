@@ -1,0 +1,14 @@
+<div>
+  <app-tasks-form></app-tasks-form>
+  <mat-list>
+    <mat-list-item *ngFor="let task of tasks">
+      <div>
+        <h3>{{ task.title }}</h3>
+        <p>{{ task.description }}</p>
+      </div>
+      <button mat-button color="primary" (click)="onDeleteTask(task.id)">
+        Delete
+      </button>
+    </mat-list-item>
+  </mat-list>
+</div>

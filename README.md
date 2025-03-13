@@ -1,59 +1,64 @@
-# JasmineTesting
+# Lexis Nexis | Testing Project with Karma and Jasmine in Angular 19
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+## Overview
 
-## Development server
+This document provides an introduction to the testing project using Karma and Jasmine in an Angular 19 application. The project has already been configured, and this guide is intended to introduce the tester responsible for conducting the tests and outline the workflow.
 
-To start a local development server, run:
+## Project Configuration
 
-```bash
-ng serve
+The project uses:
+
+- **Angular 19**: A modern framework for building web applications.
+- **Karma**: A test runner to execute unit tests in different browsers.
+- **Jasmine**: A testing framework for writing clear and maintainable test cases.
+
+The project has been set up with all the necessary dependencies, configurations, and scripts to run tests seamlessly.
+
+## Instructions
+
+In the current project you will find a set of routes and components that makes the project work. You mission is to create a end-to-end test suits for the main route.
+
+- You must create a test suit for the rendering tasks and their crud operations
+- You must create a test for the input validation for task form
+- You must create a mock API calls and validate responses
+
+## Sample Test Case
+
+Here is an example of a Jasmine test case for an Angular component:
+
+```typescript
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { MyComponent } from "./my-component.component";
+
+describe("MyComponent", () => {
+  let component: MyComponent;
+  let fixture: ComponentFixture<MyComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [MyComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(MyComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it("should create the component", () => {
+    expect(component).toBeTruthy();
+  });
+
+  it("should render the title", () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector("h1").textContent).toContain("Welcome to MyComponent!");
+  });
+});
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Consideraions and concerns
 
-## Code scaffolding
+The project is configured to run all the test cases by it's own, you only need to take care of creating test cases.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+If you need assistance, you founded a bug, or have some comments please refer to your host.
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Happy hacking. 🎭

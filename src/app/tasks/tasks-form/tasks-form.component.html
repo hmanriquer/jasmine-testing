@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit()" class="task-form-container">
+  <mat-form-field class="task-form-input">
+    <input
+      matInput
+      placeholder="Task Title"
+      [(ngModel)]="title"
+      name="title"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field class="task-form-input">
+    <textarea
+      matInput
+      placeholder="Task Description"
+      [(ngModel)]="description"
+      name="description"
+    ></textarea>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    class="task-form-button"
+  >
+    Add Task
+  </button>
+</form>
